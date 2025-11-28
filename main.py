@@ -20,14 +20,14 @@ def kelvin_to_celsius(kelvin):
 df_celsius = df.copy()
 
 # TODO: Convertir las temperaturas de cada ciudad de Kelvin a Celsius usando la funcion creada
-df_celsius["Phoenix"] = df_celsius["Phoenix_c"].apply(kelvin_a_celsius)
-df_celsius["San diego"] = df_celsius["San diego_c"].apply(kelvin_a_celsius)
-df_celsius["Toronto"] = df_celsius["Toronto_c"].apply(kelvin_a_celsius)
+df_celsius["Phoenix"] = df_celsius["Phoenix"].apply(kelvin_a_celsius)
+df_celsius["San diego"] = df_celsius["San diego"].apply(kelvin_a_celsius)
+df_celsius["Toronto"] = df_celsius["Toronto"].apply(kelvin_a_celsius)
 # Analisis
 
 # TODO: Imprime que día y hora se registró la temperatura mínima en Phoenix con el siguiente mensaje: "El día con la temperatura mínima en Phoenix fue: {fecha}"
 fecha_minima = df_celsius['Phoenix'].idxmin()
-fecha_minima = df_celsius.round(2)
+fecha_minima = df_celsius
 print("El día con la temperatura mínima en Phoenix fue: " fecha_minima )
 
 
