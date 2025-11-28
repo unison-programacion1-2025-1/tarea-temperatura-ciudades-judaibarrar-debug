@@ -13,21 +13,38 @@ df.set_index('Datetime', inplace=True)
 
 # TODO: Crear funcion para convertir de grados Kelvin a Celsius
 def kelvin_to_celsius(kelvin):
-    pass
+    return kelvin - 273.15
     
 
 # TODO: Copiar el DataFrame original y nombralo df_celsius
+df_celsius = df.copy()
 
 # TODO: Convertir las temperaturas de cada ciudad de Kelvin a Celsius usando la funcion creada
-
+df_celsius["Phoenix"] = df_celsius["Phoenix_c"].apply(kelvin_a_celsius)
+df_celsius["San diego"] = df_celsius["San diego_c"].apply(kelvin_a_celsius)
+df_celsius["Toronto"] = df_celsius["Toronto_c"].apply(kelvin_a_celsius)
 # Analisis
 
 # TODO: Imprime que día y hora se registró la temperatura mínima en Phoenix con el siguiente mensaje: "El día con la temperatura mínima en Phoenix fue: {fecha}"
+fecha_minima = df_celsius['Phoenix'].idxmin()
+fecha_minima = df_celsius.round(2)
+print("El día con la temperatura mínima en Phoenix fue: " fecha_minima )
+
+
 # TODO: Imprime la temperatura mínima en Phoenix con el siguiente mensaje: "La temperatura mínima registrada en Phoenix fue de: ", temperatura, " °C""
 
+temperatura_minima = df_celsius['Phoenix'].min()
+temperatura_minima = df_celsius.round(2)
+print("La temperatura mínima registrada en Phoenix fue de: ",temperatura_minima , " °C" )
 # TODO: Imprime que día y hora se registró la temperatura máxima en Phoenix con el siguiente mensaje: "El día con la temperatura máxima en Phoenix fue: {fecha}"
-# TODO: Imprime la temperatura máxima en Phoenix con el siguiente mensaje: "La temperatura máxima registrada en Phoenix fue de: ", temperatura, " °C""
+fecha_maxima = df_celsius['Phoenix'].idxmax()
+fecha_maxima = fecha_maxima.round(2)
+print("El día con la temperatura máxima en Phoenix fue: " fecha_maxima )
 
+# TODO: Imprime la temperatura máxima en Phoenix con el siguiente mensaje: "La temperatura máxima registrada en Phoenix fue de: ", temperatura, " °C""
+temperatura_maxima = df_celsius['Phoenix'].max()
+temperatura_maxima = temperatura_minima.round(2)
+print("La temperatura máxima registrada en Phoenix fue de: " temperatura_maxima )
 # TODO: Imprime la temperatura promedio en Phoenix durante el año 2016 con el siguiente mensaje: "La temperatura promedio durante 2016 en Phoenix fue de: ", temperatura, " °C""
 
 # Graficar la temperatura de Phoenix durante el año 2016
