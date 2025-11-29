@@ -13,7 +13,8 @@ df.set_index('Datetime', inplace=True)
 
 # TODO: Crear funcion para convertir de grados Kelvin a Celsius
 def kelvin_to_celsius(kelvin):
-    return kelvin - 273.15
+    celsius=kelvin-273.15
+    return celsius
     
 
 # TODO: Copiar el DataFrame original y nombralo df_celsius
@@ -27,7 +28,7 @@ df_celsius["Toronto"] = df_celsius["Toronto"].apply(kelvin_to_celsius)
 
 # TODO: Imprime que día y hora se registró la temperatura mínima en Phoenix con el siguiente mensaje: "El día con la temperatura mínima en Phoenix fue: {fecha}"
 fecha_minima = df_celsius['Phoenix'].idxmin()
-fecha_minima = df_celsius
+
 print("El día con la temperatura mínima en Phoenix fue: ", fecha_minima )
 
 
