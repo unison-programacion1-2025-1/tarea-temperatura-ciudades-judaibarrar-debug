@@ -35,16 +35,16 @@ print(f"El día con la temperatura mínima en Phoenix fue: {fecha_minima}" )
 # TODO: Imprime la temperatura mínima en Phoenix con el siguiente mensaje: "La temperatura mínima registrada en Phoenix fue de: ", temperatura, " °C""
 
 temperatura_minima = df_celsius['Phoenix'].min()
-temperatura_minima = df_celsius.round(2)
+temperatura_minima = temperatura_minima.round(2)
 print("La temperatura mínima registrada en Phoenix fue de: ",temperatura_minima , " °C" )
 # TODO: Imprime que día y hora se registró la temperatura máxima en Phoenix con el siguiente mensaje: "El día con la temperatura máxima en Phoenix fue: {fecha}"
 fecha_maxima = df_celsius['Phoenix'].idxmax()
-fecha_maxima = fecha_maxima.round(2)
+#fecha_maxima = fecha_maxima.round(2)
 print("El día con la temperatura máxima en Phoenix fue: ", fecha_maxima )
 
 # TODO: Imprime la temperatura máxima en Phoenix con el siguiente mensaje: "La temperatura máxima registrada en Phoenix fue de: ", temperatura, " °C""
 temperatura_maxima = df_celsius['Phoenix'].max()
-temperatura_maxima = temperatura_minima.round(2)
+temperatura_maxima = temperatura_maxima.round(2)
 print("La temperatura máxima registrada en Phoenix fue de: ", temperatura_maxima )
 # TODO: Imprime la temperatura promedio en Phoenix durante el año 2016 con el siguiente mensaje: "La temperatura promedio durante 2016 en Phoenix fue de: ", temperatura, " °C""
 
